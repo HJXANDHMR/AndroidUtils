@@ -53,7 +53,7 @@ public class AppUtil {
     /**
      * 获取应用程序的版本Code信息
      * @param context
-     * @return
+     * @return 版本code
      */
     public static int getVersionCode(Context context) {
         try {

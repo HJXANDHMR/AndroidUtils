@@ -58,7 +58,7 @@ public class CheckBoxView extends View implements Checkable{
     }
 
     private void init(Context context, AttributeSet attrs) {
-        TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.CheckBox_Sample);
+        TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.CheckBoxView);
         size = ta.getDimensionPixelSize(R.styleable.CheckBoxView_size, dp(size));
         bitmapColor = ta.getColor(R.styleable.CheckBoxView_color_background, bitmapColor);
         borderColor = ta.getColor(R.styleable.CheckBoxView_color_border, borderColor);

@@ -45,6 +45,7 @@ public class MainActivity extends Activity {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                //模拟从网络上获取书籍
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {

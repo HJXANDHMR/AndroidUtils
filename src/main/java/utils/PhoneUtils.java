@@ -1,27 +1,25 @@
 package utils;
 
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.provider.MediaStore;
-
 import java.io.File;
 
 /**
  * 手机组件调用工具类
+ *
+ * @author jingle1267@163.com
  */
-public final class PhoneUtil {
+public final class PhoneUtils {
     private static long lastClickTime;
-
     /**
      * Don't let anyone instantiate this class.
      */
-    private PhoneUtil() {
+    private PhoneUtils() {
         throw new Error("Do not need instantiate!");
     }
-
 
 
     /**
@@ -45,12 +43,12 @@ public final class PhoneUtil {
     /**
      * 判断是否为连击
      *
-     * @return boolean
+     * @return  boolean
      */
     public static boolean isFastDoubleClick() {
         long time = System.currentTimeMillis();
         long timeD = time - lastClickTime;
-        if (timeD > 0 && timeD < 500) {
+        if (0 < timeD && timeD < 500) {
             return true;
         }
         lastClickTime = time;
@@ -60,13 +58,12 @@ public final class PhoneUtil {
     /**
      * 获取手机型号
      *
-     * @param context 上下文
-     * @return String
+     * @param context  上下文
+     * @return   String
      */
     public static String getMobileModel(Context context) {
         try {
-            // 手机型号
-            String model = android.os.Build.MODEL;
+            String model = android.os.Build.MODEL; // 手机型号
             return model;
         } catch (Exception e) {
             return "未知";
@@ -76,13 +73,12 @@ public final class PhoneUtil {
     /**
      * 获取手机品牌
      *
-     * @param context 上下文
-     * @return String
+     * @param context  上下文
+     * @return  String
      */
     public static String getMobileBrand(Context context) {
         try {
-            // android系统版本号
-            String brand = android.os.Build.BRAND;
+            String brand = android.os.Build.BRAND; // android系统版本号
             return brand;
         } catch (Exception e) {
             return "未知";
@@ -91,23 +87,20 @@ public final class PhoneUtil {
 
 
     /**
-     * 拍照打开照相机！
-     *
-     * @param requestcode 返回值
-     * @param activity    上下文
+     *拍照打开照相机！
+     * @param requestcode   返回值
+     * @param activity   上下文
      * @param fileName    生成的图片文件的路径
      */
-    public static void toTakePhoto(int requestcode, Activity activity, String fileName) {
+    public static void toTakePhoto(int requestcode, Activity activity,String fileName) {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra("camerasensortype", 2);// 调用前置摄像头
         intent.putExtra("autofocus", true);// 自动对焦
         intent.putExtra("fullScreen", false);// 全屏
         intent.putExtra("showActionIcons", false);
-        try {
-            //创建一个当前任务id的文件然后里面存放任务的照片的和路径！这主文件的名字是用uuid到时候在用任务id去查路径！
+        try {//创建一个当前任务id的文件然后里面存放任务的照片的和路径！这主文件的名字是用uuid到时候在用任务id去查路径！
             File file = new File(fileName);
-            //如果这个文件不存在就创建一个文件夹！
-            if (!file.exists()) {
+            if(!file.exists()){//如果这个文件不存在就创建一个文件夹！
                 file.mkdirs();
             }
             Uri uri = Uri.fromFile(new File(fileName));
@@ -120,12 +113,11 @@ public final class PhoneUtil {
 
 
     /**
-     * 打开相册
-     *
-     * @param requestcode 响应码
-     * @param activity    上下文
+     *打开相册
+     * @param requestcode  响应码
+     * @param activity  上下文
      */
-    public static void toTakePicture(int requestcode, Activity activity) {
+    public static void toTakePicture(int requestcode, Activity activity){
         Intent intent = new Intent(Intent.ACTION_PICK, null);
         intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
                 "image/*");

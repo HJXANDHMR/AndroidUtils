@@ -59,5 +59,4 @@ public class DensityUtil {
     public static float px2sp(Context context, float pxVal) {
         return (pxVal / context.getResources().getDisplayMetrics().scaledDensity);
     }
-
 }

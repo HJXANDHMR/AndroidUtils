@@ -4,6 +4,7 @@ package utils;
 /**
  * 颜色工具类 包括常用的色值
  */
+
 public final class Colors {
 
     /**
@@ -357,5 +358,4 @@ public final class Colors {
      * 低光
      */
     public static final int LOWLIGHT = 0x33000000;
-
 }

@@ -34,7 +34,6 @@ public class NetUtil {
                 }
             }
         }
-
         return false;
     }
 
@@ -63,5 +62,4 @@ public class NetUtil {
         intent.setAction("android.intent.action.VIEW");
         activity.startActivityForResult(intent, 0);
     }
-
 }

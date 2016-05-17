@@ -1,2 +1,2 @@
 # AndroidUtils
-Android开发的一些工具类。
+Android开发的一些工具类

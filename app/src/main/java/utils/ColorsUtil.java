@@ -5,12 +5,12 @@ package utils;
  * 颜色工具类 包括常用的色值
  */
 
-public final class Colors {
+public final class ColorsUtil {
 
     /**
      * Don't let anyone instantiate this class.
      */
-    private Colors() {
+    private ColorsUtil() {
         throw new Error("Do not need instantiate!");
     }
 

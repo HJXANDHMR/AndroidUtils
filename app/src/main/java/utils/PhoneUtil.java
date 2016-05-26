@@ -12,12 +12,12 @@ import java.io.File;
  *
  * @author jingle1267@163.com
  */
-public final class PhoneUtils {
+public final class PhoneUtil {
     private static long lastClickTime;
     /**
      * Don't let anyone instantiate this class.
      */
-    private PhoneUtils() {
+    private PhoneUtil() {
         throw new Error("Do not need instantiate!");
     }
 

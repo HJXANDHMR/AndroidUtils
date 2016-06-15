@@ -15,12 +15,12 @@ import com.example.hjx.androidutils.R;
  * 需要权限: com.android.launcher.permission.INSTALL_SHORTCUT
  *          com.android.launcher.permission.UNINSTALL_SHORTCUT
  */
-public final class ShortCutUtils {
+public final class ShortCutUtil {
 
     /**
      * Don't let anyone instantiate this class.
      */
-    private ShortCutUtils() {
+    private ShortCutUtil() {
         throw new Error("Do not need instantiate!");
     }
 

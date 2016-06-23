@@ -9,6 +9,7 @@ import android.content.pm.PackageManager;
  */
 public class AppUtil {
     private AppUtil() {
+        
         /* cannot be instantiated*/
         throw new UnsupportedOperationException("cannot be instantiated");
     }

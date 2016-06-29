@@ -1,4 +1,4 @@
-package utils.view;
+package utils;
 
 /**
  * Created by Administrator on 2016/6/29.

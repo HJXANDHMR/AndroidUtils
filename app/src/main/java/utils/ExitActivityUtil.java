@@ -13,7 +13,6 @@ public class ExitActivityUtil extends Activity {
     private long exitTime = 0;
 
     //重写 onKeyDown方法
-
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {

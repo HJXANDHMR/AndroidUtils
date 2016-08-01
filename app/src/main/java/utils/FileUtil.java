@@ -37,7 +37,6 @@ public class FileUtil {
      * 删除指定的文件
      *
      * @param filePath 文件路径
-     *
      * @return 若删除成功，则返回True；反之，则返回False
      *
      */

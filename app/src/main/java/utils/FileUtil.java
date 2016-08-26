@@ -110,8 +110,7 @@ public class FileUtil {
                     output.flush();
                     output.close();
                     input.close();
-                }
-                if (temp.isDirectory()) {
+                }if (temp.isDirectory()) {
                     copy(source + "/" + file[i], target + "/" + file[i], true);
                 }
             }

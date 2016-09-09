@@ -10,7 +10,7 @@ import java.io.File;
 /**
  * 手机组件调用工具类
  *
- * @author jingle1267@163.com
+ * @author
  */
 public final class PhoneUtil {
     private static long lastClickTime;

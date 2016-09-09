@@ -64,7 +64,8 @@ public final class PhoneUtil {
      */
     public static String getMobileModel(Context context) {
         try {
-            String model = android.os.Build.MODEL; // 手机型号
+            // 手机型号
+            String model = android.os.Build.MODEL; 
             return model;
         } catch (Exception e) {
             return "未知";
@@ -79,7 +80,8 @@ public final class PhoneUtil {
      */
     public static String getMobileBrand(Context context) {
         try {
-            String brand = android.os.Build.BRAND; // android系统版本号
+            // android系统版本号
+            String brand = android.os.Build.BRAND; 
             return brand;
         } catch (Exception e) {
             return "未知";

@@ -33,7 +33,7 @@ allprojects {
 
 ```gradle
 dependencies {
-    implementation 'com.github.HJXANDHMR:AndroidUtils:1.0'
+    implementation 'com.github.HJXANDHMR:AndroidUtils:2.0.0'
 }
 ```
 

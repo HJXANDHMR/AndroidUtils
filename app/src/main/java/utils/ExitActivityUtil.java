@@ -12,13 +12,13 @@ public class ExitActivityUtil extends Activity {
 
     private long exitTime = 0;
 
-    //重写 onKeyDown方法
+    //Override onKeyDown method
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
-            //两秒之内按返回键就会退出
+            //Press back again within two seconds to exit
             if ((System.currentTimeMillis() - exitTime) > 2000) {
-                Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Press again to exit", Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             } else {
                 finish();

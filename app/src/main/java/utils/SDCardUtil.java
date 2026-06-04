@@ -6,7 +6,7 @@ import android.os.StatFs;
 import java.io.File;
 
 /**
- * SD卡辅助类
+ * SD card helper class
  */
 public class SDCardUtil {
 
@@ -16,7 +16,7 @@ public class SDCardUtil {
     }
 
     /**
-     * 判断SDCard是否可用
+     * Check if SDCard is available
      *
      * @return
      */
@@ -27,7 +27,7 @@ public class SDCardUtil {
     }
 
     /**
-     * 获取SD卡路径
+     * Get SD card path
      *
      * @return
      */
@@ -37,16 +37,16 @@ public class SDCardUtil {
     }
 
     /**
-     * 获取SD卡的剩余容量 单位byte
+     * Get remaining capacity of SD card in bytes
      *
      * @return
      */
     public static long getSDCardAllSize() {
         if (isSDCardEnable()) {
             StatFs stat = new StatFs(getSDCardPath());
-            // 获取空闲的数据块的数量
+            // Get the number of available data blocks
             long availableBlocks = (long) stat.getAvailableBlocks() - 4;
-            // 获取单个数据块的大小（byte）
+            // Get the size of a single data block (bytes)
             long freeBlocks = stat.getAvailableBlocks();
             return freeBlocks * availableBlocks;
         }
@@ -54,18 +54,18 @@ public class SDCardUtil {
     }
 
     /**
-     * 获取指定路径所在空间的剩余可用容量字节数，单位byte
+     * Get remaining available capacity in bytes at the specified path
      *
      * @param filePath
-     * @return 容量字节 SDCard可用空间，内部存储可用空间
+     * @return capacity in bytes, SDCard available space, internal storage available space
      */
     public static long getFreeBytes(String filePath)
     {
-        // 如果是sd卡的下的路径，则获取sd卡可用容量
+        // If the path is under SD card, get SD card available capacity
         if (filePath.startsWith(getSDCardPath())) {
             filePath = getSDCardPath();
         } else {
-        // 如果是内部存储的路径，则获取内存存储的可用容量
+        // If the path is internal storage, get internal storage available capacity
             filePath = Environment.getDataDirectory().getAbsolutePath();
         }
         StatFs stat = new StatFs(filePath);
@@ -74,7 +74,7 @@ public class SDCardUtil {
     }
 
     /**
-     * 获取系统存储路径
+     * Get system storage path
      *
      * @return
      */

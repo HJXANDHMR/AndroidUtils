@@ -8,7 +8,7 @@ import android.provider.MediaStore;
 import java.io.File;
 
 /**
- * 手机组件调用工具类
+ * Phone component utility class
  *
  * @author
  */
@@ -23,11 +23,11 @@ public final class PhoneUtil {
 
 
     /**
-     * 调用系统发短信界面
+     * Launch the system SMS interface
      *
      * @param activity    Activity
-     * @param phoneNumber 手机号码
-     * @param smsContent  短信内容
+     * @param phoneNumber phone number
+     * @param smsContent  SMS content
      */
     public static void sendMessage(Context activity, String phoneNumber, String smsContent) {
         if (phoneNumber == null || phoneNumber.length() < 4) {
@@ -42,7 +42,7 @@ public final class PhoneUtil {
 
 
     /**
-     * 判断是否为连击
+     * Check if it is a double-click
      *
      * @return  boolean
      */
@@ -57,53 +57,53 @@ public final class PhoneUtil {
     }
 
     /**
-     * 获取手机型号
+     * Get phone model
      *
-     * @param context  上下文
+     * @param context  context
      * @return   String
      */
     public static String getMobileModel(Context context) {
         try {
-            // 手机型号
+            // Phone model
             String model = android.os.Build.MODEL; 
             return model;
         } catch (Exception e) {
-            return "未知";
+            return "Unknown";
         }
     }
 
     /**
-     * 获取手机品牌
+     * Get phone brand
      *
-     * @param context  上下文
+     * @param context  context
      * @return  String
      */
     public static String getMobileBrand(Context context) {
         try {
-            // android系统版本号
+            // Android system version
             String brand = android.os.Build.BRAND; 
             return brand;
         } catch (Exception e) {
-            return "未知";
+            return "Unknown";
         }
     }
 
 
     /**
-     *拍照打开照相机！
-     * @param requestcode   返回值
-     * @param activity   上下文
-     * @param fileName    生成的图片文件的路径
+     * Take a photo and open the camera
+     * @param requestcode   request code
+     * @param activity   context
+     * @param fileName    path of the generated image file
      */
     public static void toTakePhoto(int requestcode, Activity activity,String fileName) {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra("camerasensortype", 2);// 调用前置摄像头
-        intent.putExtra("autofocus", true);// 自动对焦
-        intent.putExtra("fullScreen", false);// 全屏
+        intent.putExtra("camerasensortype", 2);// Use front camera
+        intent.putExtra("autofocus", true);// Auto focus
+        intent.putExtra("fullScreen", false);// Full screen
         intent.putExtra("showActionIcons", false);
-        try {//创建一个当前任务id的文件然后里面存放任务的照片的和路径！这主文件的名字是用uuid到时候在用任务id去查路径！
+        try {// Create a file with the current task ID to store the photo path! The file name uses UUID and the task ID will be used later to query the path!
             File file = new File(fileName);
-            if(!file.exists()){//如果这个文件不存在就创建一个文件夹！
+            if(!file.exists()){// Create the directory if it does not exist
                 file.mkdirs();
             }
             Uri uri = Uri.fromFile(new File(fileName));
@@ -116,9 +116,9 @@ public final class PhoneUtil {
 
 
     /**
-     *打开相册
-     * @param requestcode  响应码
-     * @param activity  上下文
+     * Open photo gallery
+     * @param requestcode  response code
+     * @param activity  context
      */
     public static void toTakePicture(int requestcode, Activity activity){
         Intent intent = new Intent(Intent.ACTION_PICK, null);

@@ -10,7 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Http请求的相关工具类
+ * HTTP request utility class
  */
 public class HttpUtil {
 
@@ -21,7 +21,7 @@ public class HttpUtil {
     }
 
     /**
-     * 异步的Get请求
+     * Asynchronous GET request
      *
      * @param urlStr
      * @param callBack
@@ -43,7 +43,7 @@ public class HttpUtil {
     }
 
     /**
-     * 异步的Post请求
+     * Asynchronous POST request
      * @param urlStr
      * @param params
      * @param callBack
@@ -68,7 +68,7 @@ public class HttpUtil {
 
 
     /**
-     * Get请求，获得返回数据
+     * GET request, return response data
      *
      * @param urlStr
      * @return
@@ -124,12 +124,12 @@ public class HttpUtil {
     }
 
     /**
-     * 向指定 URL 发送POST方法的请求
+     * Send a POST request to the specified URL
      *
-     * @param url 发送请求的 URL
+     * @param url the URL to send the request to
      * @param param
-     *            请求参数，请求参数应该是 name1=value1&name2=value2 的形式。
-     * @return 所代表远程资源的响应结果
+     *            request parameters, should be in the form of name1=value1&name2=value2.
+     * @return the response result from the remote resource
      * @throws Exception
      */
     public static String doPost(String url, String param) {
@@ -138,10 +138,10 @@ public class HttpUtil {
         String result = "";
         try {
             URL realUrl = new URL(url);
-            // 打开和URL之间的连接
+            // Open connection to URL
             HttpURLConnection conn = (HttpURLConnection) realUrl
                     .openConnection();
-            // 设置通用的请求属性
+            // Set common request properties
             conn.setRequestProperty("accept", "*/*");
             conn.setRequestProperty("connection", "Keep-Alive");
             conn.setRequestMethod("POST");
@@ -149,20 +149,20 @@ public class HttpUtil {
                     "application/x-www-form-urlencoded");
             conn.setRequestProperty("charset", "utf-8");
             conn.setUseCaches(false);
-            // 发送POST请求必须设置如下两行
+            // Must set these two lines for POST request
             conn.setDoOutput(true);
             conn.setDoInput(true);
             conn.setReadTimeout(TIMEOUT_IN_MILLIONS);
             conn.setConnectTimeout(TIMEOUT_IN_MILLIONS);
             if (param != null && !param.trim().equals("")) {
-                // 获取URLConnection对象对应的输出流
+                // Get the output stream from URLConnection
                 out = new PrintWriter(conn.getOutputStream());
-                // 发送请求参数
+                // Send request parameters
                 out.print(param);
-                // flush输出流的缓冲
+                // Flush the output stream buffer
                 out.flush();
             }
-            // 定义BufferedReader输入流来读取URL的响应
+            // Define BufferedReader to read the URL response
             in = new BufferedReader(
                     new InputStreamReader(conn.getInputStream()));
             String line;
@@ -172,7 +172,7 @@ public class HttpUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // 使用finally块来关闭输出流、输入流
+        // Use finally block to close output and input streams
         finally {
             try {
                 if (out != null) {

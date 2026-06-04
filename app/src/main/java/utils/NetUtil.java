@@ -8,7 +8,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 /**
- * 网络相关辅助类
+ * Network-related helper class
  */
 public class NetUtil {
 
@@ -18,7 +18,7 @@ public class NetUtil {
     }
 
     /**
-     * 判断网络是否连接
+     * Check if network is connected
      *
      * @param context
      * @return
@@ -38,7 +38,7 @@ public class NetUtil {
     }
 
     /**
-     * 判断是否是WIFI连接
+     * Check if the connection is WIFI
      *
      * @param context
      * @return
@@ -52,7 +52,7 @@ public class NetUtil {
     }
 
     /**
-     * 打开网络设置界面
+     * Open network settings
      */
     public static void openSetting(Activity activity) {
         Intent intent = new Intent("/");

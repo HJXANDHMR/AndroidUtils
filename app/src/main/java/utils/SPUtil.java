@@ -8,16 +8,16 @@ import java.lang.reflect.Method;
 import java.util.Map;
 
 /**
- * SharedPreferences统一管理类
+ * SharedPreferences unified management class
  */
 public class SPUtil {
     /**
-     * 保存在手机里面的文件名
+     * File name stored on the device
      */
     public static final String FILE_NAME = "share_data";
 
     /**
-     * 保存数据的方法，我们需要拿到保存数据的具体类型，然后根据类型调用不同的保存方法
+     * Save data method. We need to get the specific type of the data and call the appropriate save method accordingly
      *
      * @param context
      * @param key
@@ -47,7 +47,7 @@ public class SPUtil {
 
 
     /**
-     * 得到保存数据的方法，我们根据默认值得到保存的数据的具体类型，然后调用相对于的方法获取值
+     * Get saved data method. We determine the specific type of saved data based on the default value and call the corresponding method to get the value
      *
      * @param context
      * @param key
@@ -74,7 +74,7 @@ public class SPUtil {
     }
 
     /**
-     * 移除某个key值已经对应的值
+     * Remove the value associated with a specific key
      * @param context
      * @param key
      */
@@ -87,7 +87,7 @@ public class SPUtil {
     }
 
     /**
-     * 清除所有数据
+     * Clear all data
      * @param context
      */
     public static void clear(Context context) {
@@ -99,7 +99,7 @@ public class SPUtil {
     }
 
     /**
-     * 查询某个key是否已经存在
+     * Check if a specific key exists
      * @param context
      * @param key
      * @return
@@ -111,7 +111,7 @@ public class SPUtil {
     }
 
     /**
-     * 返回所有的键值对
+     * Return all key-value pairs
      *
      * @param context
      * @return
@@ -123,7 +123,7 @@ public class SPUtil {
     }
 
     /**
-     * 创建一个解决SharedPreferencesCompat.apply方法的一个兼容类
+     * A compatibility class to handle SharedPreferencesCompat.apply method
      *
      * @author zhy
      *
@@ -132,7 +132,7 @@ public class SPUtil {
         private static final Method sApplyMethod = findApplyMethod();
 
         /**
-         * 反射查找apply的方法
+         * Find the apply method via reflection
          *
          * @return
          */
@@ -147,7 +147,7 @@ public class SPUtil {
         }
 
         /**
-         * 如果找到则使用apply执行，否则使用commit
+         * Use apply if found, otherwise use commit
          *
          * @param editor
          */

@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 /**
- * 屏幕相关辅助类
+ * Screen-related helper class
  */
 public class ScreenUtil {
 
@@ -19,7 +19,7 @@ public class ScreenUtil {
     }
 
     /**
-     * 获得屏幕宽度
+     * Get screen width
      *
      * @param context
      * @return
@@ -33,7 +33,7 @@ public class ScreenUtil {
     }
 
     /**
-     * 获得屏幕高度
+     * Get screen height
      *
      * @param context
      * @return
@@ -47,7 +47,7 @@ public class ScreenUtil {
     }
 
     /**
-     * 获得状态栏的高度
+     * Get status bar height
      *
      * @param context
      * @return
@@ -68,7 +68,7 @@ public class ScreenUtil {
     }
 
     /**
-     * 获取当前屏幕截图，包含状态栏
+     * Take a screenshot of the current screen, including the status bar
      *
      * @param activity
      * @return
@@ -87,7 +87,7 @@ public class ScreenUtil {
     }
 
     /**
-     * 获取当前屏幕截图，不包含状态栏
+     * Take a screenshot of the current screen, excluding the status bar
      *
      * @param activity
      * @return

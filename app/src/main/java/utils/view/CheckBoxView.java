@@ -16,7 +16,7 @@ import android.widget.Checkable;
 import com.example.hjx.androidutils.R;
 
 /**
- * 自定义CheckBox
+ * Custom CheckBox
  */
 public class CheckBoxView extends View implements Checkable{
 

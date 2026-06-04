@@ -6,74 +6,74 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * 日期操作工具类.
+ * Date operation utility class.
  *
  */
 
 public class DateUtil {
 
     /**
-     * 英文简写如：2016
+     * English abbreviation e.g.: 2016
      */
     public static String FORMAT_Y = "yyyy";
 
     /**
-     * 英文简写如：12:01
+     * English abbreviation e.g.: 12:01
      */
     public static String FORMAT_HM = "HH:mm";
 
     /**
-     * 英文简写如：1-12 12:01
+     * English abbreviation e.g.: 1-12 12:01
      */
     public static String FORMAT_MDHM = "MM-dd HH:mm";
 
     /**
-     * 英文简写（默认）如：2016-12-01
+     * English abbreviation (default) e.g.: 2016-12-01
      */
     public static String FORMAT_YMD = "yyyy-MM-dd";
 
     /**
-     * 英文全称  如：2016-12-01 23:15
+     * English full format e.g.: 2016-12-01 23:15
      */
     public static String FORMAT_YMDHM = "yyyy-MM-dd HH:mm";
 
     /**
-     * 英文全称  如：2016-12-01 23:15:06
+     * English full format e.g.: 2016-12-01 23:15:06
      */
     public static String FORMAT_YMDHMS = "yyyy-MM-dd HH:mm:ss";
 
     /**
-     * 精确到毫秒的完整时间    如：yyyy-MM-dd HH:mm:ss.S
+     * Full time with millisecond precision e.g.: yyyy-MM-dd HH:mm:ss.S
      */
     public static String FORMAT_FULL = "yyyy-MM-dd HH:mm:ss.S";
 
     /**
-     * 精确到毫秒的完整时间    如：yyyy-MM-dd HH:mm:ss.S
+     * Full time with millisecond precision e.g.: yyyy-MM-dd HH:mm:ss.S
      */
     public static String FORMAT_FULL_SN = "yyyyMMddHHmmssS";
 
     /**
-     * 中文简写  如：2016年12月01日
+     * Chinese abbreviation e.g.: 2016年12月01日
      */
     public static String FORMAT_YMD_CN = "yyyy年MM月dd日";
 
     /**
-     * 中文简写  如：2016年12月01日  12时
+     * Chinese abbreviation e.g.: 2016年12月01日  12时
      */
     public static String FORMAT_YMDH_CN = "yyyy年MM月dd日 HH时";
 
     /**
-     * 中文简写  如：2016年12月01日  12时12分
+     * Chinese abbreviation e.g.: 2016年12月01日  12时12分
      */
     public static String FORMAT_YMDHM_CN = "yyyy年MM月dd日 HH时mm分";
 
     /**
-     * 中文全称  如：2016年12月01日  23时15分06秒
+     * Chinese full format e.g.: 2016年12月01日  23时15分06秒
      */
     public static String FORMAT_YMDHMS_CN = "yyyy年MM月dd日  HH时mm分ss秒";
 
     /**
-     * 精确到毫秒的完整中文时间
+     * Full Chinese time with millisecond precision
      */
     public static String FORMAT_FULL_CN = "yyyy年MM月dd日  HH时mm分ss秒SSS毫秒";
 
@@ -164,9 +164,9 @@ public class DateUtil {
 
 
     /**
-     * 获得当前日期的字符串格式
-     * @param format    格式化的类型
-     * @return  返回格式化之后的事件
+     * Get current date string
+     * @param format    format type
+     * @return  formatted date string
      */
     public static String getCurDateStr(String format) {
         Calendar c = Calendar.getInstance();
@@ -177,8 +177,8 @@ public class DateUtil {
 
     /**
      *
-     * @param time 当前的时间
-     * @return  格式到秒
+     * @param time current time
+     * @return  formatted to seconds
      */
 
     public static String getMillon(long time) {
@@ -190,8 +190,8 @@ public class DateUtil {
 
     /**
      *
-     * @param time  当前的时间
-     * @return  当前的天
+     * @param time  current time
+     * @return  current day
      */
     public static String getDay(long time) {
 
@@ -202,10 +202,10 @@ public class DateUtil {
 
     /**
      *
-     * @param time 时间
-     * @return 返回一个毫秒
+     * @param time time
+     * @return time in milliseconds
      */
-    // 格式到毫秒
+    // Format to milliseconds
     public static String getSMillon(long time) {
 
         return new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-SSS").format(time);
@@ -214,10 +214,10 @@ public class DateUtil {
 
 
     /**
-     * 在日期上增加数个整月
-     * @param date 日期
-     * @param n 要增加的月数
-     * @return   增加数个整月
+     * Add months to a date
+     * @param date date
+     * @param n number of months to add
+     * @return   date after adding months
      */
     public static Date addMonth(Date date, int n) {
         Calendar cal = Calendar.getInstance();
@@ -229,10 +229,10 @@ public class DateUtil {
 
 
     /**
-     * 在日期上增加天数
-     * @param date 日期
-     * @param n 要增加的天数
-     * @return   增加之后的天数
+     * Add days to a date
+     * @param date date
+     * @param n number of days to add
+     * @return   date after adding days
      */
     public static Date addDay(Date date, int n) {
         Calendar cal = Calendar.getInstance();
@@ -244,11 +244,11 @@ public class DateUtil {
 
 
     /**
-     * 获取距现在某一小时的时刻
+     * Get the time at a certain hour from now
      *
-     * @param format 格式化时间的格式
-     * @param h 距现在的小时 例如：h=-1为上一个小时，h=1为下一个小时
-     * @return  获取距现在某一小时的时刻
+     * @param format time format
+     * @param h hours from now e.g.: h=-1 for previous hour, h=1 for next hour
+     * @return  the time at a certain hour from now
      */
     public static String getNextHour(String format, int h) {
         SimpleDateFormat sdf = new SimpleDateFormat(format);
@@ -260,8 +260,8 @@ public class DateUtil {
 
 
     /**
-     * 获取时间戳
-     * @return 获取时间戳
+     * Get timestamp
+     * @return timestamp string
      */
     public static String getTimeString() {
         SimpleDateFormat df = new SimpleDateFormat(FORMAT_FULL);
@@ -273,10 +273,10 @@ public class DateUtil {
 
 
     /**
-     * 功能描述：返回月
+     * Description: return month
      *
-     * @param date Date 日期
-     * @return 返回月份
+     * @param date Date
+     * @return month
      */
     public static int getMonth(Date date) {
         calendar = Calendar.getInstance();
@@ -286,10 +286,10 @@ public class DateUtil {
 
 
     /**
-     * 功能描述：返回日
+     * Description: return day
      *
-     * @param date Date 日期
-     * @return 返回日份
+     * @param date Date
+     * @return day
      */
     public static int getDay(Date date) {
         calendar = Calendar.getInstance();
@@ -299,10 +299,10 @@ public class DateUtil {
 
 
     /**
-     * 功能描述：返回小
+     * Description: return hour
      *
-     * @param date 日期
-     * @return 返回小时
+     * @param date date
+     * @return hour
      */
     public static int getHour(Date date) {
         calendar = Calendar.getInstance();
@@ -312,10 +312,10 @@ public class DateUtil {
 
 
     /**
-     * 功能描述：返回分
+     * Description: return minute
      *
-     * @param date 日期
-     * @return 返回分钟
+     * @param date date
+     * @return minute
      */
     public static int getMinute(Date date) {
         calendar = Calendar.getInstance();
@@ -325,8 +325,8 @@ public class DateUtil {
 
 
     /**
-     * 获得默认的 date pattern
-     * @return  默认的格式
+     * Get the default date pattern
+     * @return  default format
      */
     public static String getDatePattern() {
 
@@ -335,10 +335,10 @@ public class DateUtil {
 
 
     /**
-     * 返回秒钟
+     * Return seconds
      *
-     * @param date Date 日期
-     * @return 返回秒钟
+     * @param date Date
+     * @return seconds
      */
     public static int getSecond(Date date) {
         calendar = Calendar.getInstance();
@@ -349,10 +349,10 @@ public class DateUtil {
 
 
     /**
-     * 使用预设格式提取字符串日期
+     * Extract date string using preset format
      *
-     * @param strDate 日期字符串
-     * @return 提取字符串的日期
+     * @param strDate date string
+     * @return extracted date
      */
     public static Date parse(String strDate) {
         return parse(strDate, getDatePattern());
@@ -361,10 +361,10 @@ public class DateUtil {
 
 
     /**
-     * 功能描述：返回毫
+     * Description: return milliseconds
      *
-     * @param date 日期
-     * @return 返回毫
+     * @param date date
+     * @return milliseconds
      */
     public static long getMillis(Date date) {
         calendar = Calendar.getInstance();
@@ -374,10 +374,10 @@ public class DateUtil {
 
 
     /**
-     * 按默认格式的字符串距离今天的天数
+     * Days between given date string and today using default format
      *
-     * @param date 日期字符串
-     * @return 按默认格式的字符串距离今天的天数
+     * @param date date string
+     * @return days between given date and today
      */
     public static int countDays(String date) {
         long t = Calendar.getInstance().getTime().getTime();
@@ -390,11 +390,11 @@ public class DateUtil {
 
 
     /**
-     * 使用用户格式提取字符串日期
+     * Extract date string using user-defined format
      *
-     * @param strDate 日期字符串
-     * @param pattern 日期格式
-     * @return  提取字符串日期
+     * @param strDate date string
+     * @param pattern date format
+     * @return  extracted date
      */
     public static Date parse(String strDate, String pattern) {
         SimpleDateFormat df = new SimpleDateFormat(pattern);
@@ -409,11 +409,11 @@ public class DateUtil {
 
 
     /**
-     * 按用户格式字符串距离今天的天数
+     * Days between given date string and today using user-defined format
      *
-     * @param date 日期字符串
-     * @param format 日期格式
-     * @return  按用户格式字符串距离今天的天数
+     * @param date date string
+     * @param format date format
+     * @return  days between given date and today
      */
     public static int countDays(String date, String format) {
         long t = Calendar.getInstance().getTime().getTime();

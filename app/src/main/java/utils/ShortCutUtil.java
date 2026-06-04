@@ -10,9 +10,9 @@ import android.net.Uri;
 import com.example.hjx.androidutils.R;
 
 /**
- * 创建删除快捷图标
+ * Create and delete shortcut icons
  *
- * 需要权限: com.android.launcher.permission.INSTALL_SHORTCUT
+ * Required permissions: com.android.launcher.permission.INSTALL_SHORTCUT
  *          com.android.launcher.permission.UNINSTALL_SHORTCUT
  */
 public final class ShortCutUtil {
@@ -25,10 +25,10 @@ public final class ShortCutUtil {
     }
 
     /**
-     * 检测是否存在快捷键
+     * Check if a shortcut exists
      *
      * @param activity Activity
-     * @return 是否存在桌面图标
+     * @return whether a desktop icon exists
      */
     public static boolean hasShortcut(Activity activity) {
         boolean isInstallShortcut = false;
@@ -47,7 +47,7 @@ public final class ShortCutUtil {
     }
 
     /**
-     * 为程序创建桌面快捷方式
+     * Create a desktop shortcut for the app
      *
      * @param activity Activity
      * @param res     res
@@ -56,15 +56,15 @@ public final class ShortCutUtil {
 
         Intent shortcut = new Intent(
                 "com.android.launcher.action.INSTALL_SHORTCUT");
-        // 快捷方式的名称
+        // Shortcut name
         shortcut.putExtra(Intent.EXTRA_SHORTCUT_NAME,
                 activity.getString(R.string.app_name));
-        // 不允许重复创建
+        // Do not allow duplicate creation
         shortcut.putExtra("duplicate", false);
         Intent shortcutIntent = new Intent(Intent.ACTION_MAIN);
         shortcutIntent.setClassName(activity, activity.getClass().getName());
         shortcut.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);
-        // 快捷方式的图标
+        // Shortcut icon
         Intent.ShortcutIconResource iconRes = Intent.ShortcutIconResource.fromContext(
                 activity, res);
         shortcut.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconRes);
@@ -73,7 +73,7 @@ public final class ShortCutUtil {
     }
 
     /**
-     * 删除程序的快捷方式
+     * Delete the app's shortcut
      *
      * @param activity Activity
      */
@@ -81,7 +81,7 @@ public final class ShortCutUtil {
 
         Intent shortcut = new Intent(
                 "com.android.launcher.action.UNINSTALL_SHORTCUT");
-        // 快捷方式的名称
+        // Shortcut name
         shortcut.putExtra(Intent.EXTRA_SHORTCUT_NAME,
                 activity.getString(R.string.app_name));
         String appClass = activity.getPackageName() + "."

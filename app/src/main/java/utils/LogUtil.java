@@ -3,7 +3,7 @@ package utils;
 import android.util.Log;
 
 /**
- * Log统一管理类
+ * Unified Log management class
  */
 public class LogUtil {
 
@@ -12,11 +12,11 @@ public class LogUtil {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 
-    // 是否需要打印bug，可以在application的onCreate函数里面初始化
+    // Whether to print logs, can be initialized in application's onCreate method
     public static boolean isDebug = true;
     private static final String TAG = "LogUtil";
 
-    // 下面四个是默认tag的函数
+    // The following four functions use the default tag
     public static void i(String msg)
     {
         if (isDebug)
@@ -41,7 +41,7 @@ public class LogUtil {
             Log.v(TAG, msg);
     }
 
-    // 下面是传入自定义tag的函数
+    // The following functions accept a custom tag
     public static void i(String tag, String msg)
     {
         if (isDebug)

@@ -6,14 +6,14 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 
 /**
- * 文件操作工具类
+ * File operation utility class
  */
 public class FileUtil {
     /**
-     * 在指定的位置创建指定的文件
+     * Create a file at the specified location
      *
-     * @param filePath 完整的文件路径
-     * @param mkdir 是否创建相关的文件夹
+     * @param filePath full file path
+     * @param mkdir whether to create related directories
      * @throws Exception
      */
     public static void mkFile(String filePath, boolean mkdir) throws Exception {
@@ -24,20 +24,20 @@ public class FileUtil {
     }
 
     /**
-     * 在指定的位置创建文件夹
+     * Create a directory at the specified location
      *
-     * @param dirPath 文件夹路径
-     * @return 若创建成功，则返回True；反之，则返回False
+     * @param dirPath directory path
+     * @return true if created successfully, false otherwise
      */
     public static boolean mkDir(String dirPath) {
         return new File(dirPath).mkdirs();
     }
 
     /**
-     * 删除指定的文件
+     * Delete the specified file
      *
-     * @param filePath 文件路径
-     * @return 若删除成功，则返回True；反之，则返回False
+     * @param filePath file path
+     * @return true if deleted successfully, false otherwise
      *
      */
     public static boolean delFile(String filePath) {
@@ -45,11 +45,11 @@ public class FileUtil {
     }
 
     /**
-     * 删除指定的文件夹
+     * Delete the specified directory
      *
-     * @param dirPath 文件夹路径
-     * @param delFile 文件夹中是否包含文件
-     * @return 若删除成功，则返回True；反之，则返回False
+     * @param dirPath directory path
+     * @param delFile whether the directory contains files
+     * @return true if deleted successfully, false otherwise
      *
      */
     public static boolean delDir(String dirPath, boolean delFile) {
@@ -80,10 +80,10 @@ public class FileUtil {
     }
 
     /**
-     * 复制文件/文件夹 若要进行文件夹复制，请勿将目标文件夹置于源文件夹中
-     * @param source 源文件（夹）
-     * @param target 目标文件（夹）
-     * @param isFolder 若进行文件夹复制，则为True；反之为False
+     * Copy file/directory. Do not place the target directory inside the source directory when copying directories
+     * @param source source file/directory
+     * @param target target file/directory
+     * @param isFolder true for directory copy, false for file copy
      * @throws Exception
      */
     public static void copy(String source, String target, boolean isFolder)
@@ -134,10 +134,10 @@ public class FileUtil {
     }
 
     /**
-     * 移动指定的文件（夹）到目标文件（夹）
-     * @param source 源文件（夹）
-     * @param target 目标文件（夹）
-     * @param isFolder 若为文件夹，则为True；反之为False
+     * Move the specified file/directory to the target location
+     * @param source source file/directory
+     * @param target target file/directory
+     * @param isFolder true if it is a directory, false otherwise
      * @return
      * @throws Exception
      */

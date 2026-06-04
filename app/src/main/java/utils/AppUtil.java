@@ -5,7 +5,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
 /**
- * app相关辅助类
+ * App-related helper class
  */
 public class AppUtil {
     private AppUtil() {
@@ -15,7 +15,7 @@ public class AppUtil {
     }
 
     /**
-     * 获取应用程序名称
+     * Get the application name
      *
      * @param context
      * @return
@@ -34,10 +34,10 @@ public class AppUtil {
     }
 
     /**
-     * 获取应用程序版本名称信息
+     * Get the application version name
      *
      * @param context
-     * @return 当前应用的版本名称
+     * @return the current application version name
      */
     public static String getVersionName(Context context) {
         try {
@@ -52,9 +52,9 @@ public class AppUtil {
     }
 
     /**
-     * 获取应用程序的版本Code信息
+     * Get the application version code
      * @param context
-     * @return 版本code
+     * @return the version code
      */
     public static int getVersionCode(Context context) {
         try {
